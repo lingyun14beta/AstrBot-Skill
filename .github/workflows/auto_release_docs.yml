@@ -40,8 +40,8 @@ jobs:
       - name: Create docs zip
         if: steps.check.outputs.should_release == 'true'
         run: |
-          test -d docs
-          zip -r "${{ steps.check.outputs.asset_name }}" docs
+          test -d skill-astrbot-dev
+          zip -r "${{ steps.check.outputs.asset_name }}" skill-astrbot-dev
 
       - name: Publish GitHub Release
         if: steps.check.outputs.should_release == 'true'

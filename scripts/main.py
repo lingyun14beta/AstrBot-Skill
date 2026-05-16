@@ -16,7 +16,7 @@ class MainController:
         self.ai_changes = [] # 记录 AI 改动的详细摘要
 
     def _write_snapshot_indexes(self):
-        snapshots_root = os.path.join("docs", "snapshots")
+        snapshots_root = os.path.join("skill-astrbot-dev", "snapshots")
         if not os.path.isdir(snapshots_root):
             return
 
@@ -44,7 +44,7 @@ class MainController:
             content = [
                 f"# {v} 文档快照",
                 "",
-                f"这是 AstrBot `{v}` 的文档快照（仅 docs/ 内容）。",
+                f"这是 AstrBot `{v}` 的文档快照（仅 skill-astrbot-dev/ 内容）。",
                 "",
                 "## 快速入口",
                 "",
@@ -62,14 +62,14 @@ class MainController:
     def handle_release(self, update: Dict):
         """
         实现版本发布逻辑：
-        当检测到新 Tag 时，自动将当前 docs/ 下的所有分类文件夹（排除 snapshots/）拷贝到 docs/snapshots/<version>/ 下。
+        当检测到新 Tag 时，自动将当前 skill-astrbot-dev/ 下的所有分类文件夹（排除 snapshots/）拷贝到 skill-astrbot-dev/snapshots/<version>/ 下。
         """
         tag_name = update.get('tag_name')
         if not tag_name:
             return
 
-        snapshot_path = os.path.join("docs/snapshots", tag_name)
-        docs_path = "docs"
+        snapshot_path = os.path.join("skill-astrbot-dev/snapshots", tag_name)
+        docs_path = "skill-astrbot-dev"
 
         print(f"🚀 检测到新版本发布：{tag_name}。正在创建文档快照...")
         
@@ -78,7 +78,7 @@ class MainController:
             return
 
         # 确保目录创建安全
-        os.makedirs("docs/snapshots", exist_ok=True)
+        os.makedirs("skill-astrbot-dev/snapshots", exist_ok=True)
         if os.path.exists(snapshot_path):
             print(f"⚠️ 警告：快照目录 {snapshot_path} 已存在。将执行覆盖。")
             shutil.rmtree(snapshot_path)
@@ -86,7 +86,7 @@ class MainController:
         os.makedirs(snapshot_path, exist_ok=True)
 
         try:
-            # 遍历 docs 下的项，排除 snapshots
+            # 遍历 skill-astrbot-dev 下的项，排除 snapshots
             for item in os.listdir(docs_path):
                 if item == "snapshots":
                     continue

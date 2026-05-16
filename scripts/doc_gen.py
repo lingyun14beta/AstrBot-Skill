@@ -15,7 +15,7 @@ class DocGenerator:
         self.base_url = config.BASE_URL.rstrip('/')
         self.model_name = config.MODEL_NAME
         self.api_style = config.LLM_API_STYLE
-        self.docs_root = "docs"
+        self.docs_root = "skill-astrbot-dev"
         self.show_base_url_in_logs = config.SHOW_BASE_URL_IN_LOGS
         self.max_tokens = config.LLM_MAX_TOKENS
         self.categories = [
@@ -29,7 +29,7 @@ class DocGenerator:
         self.default_category = "design_standards"
 
     def _get_base_context(self) -> str:
-        """递归读取 docs/ 下的所有分类文件夹（排除 snapshots/）下的 md 文件作为上下文。
+        """递归读取 skill-astrbot-dev/ 下的所有分类文件夹（排除 snapshots/）下的 md 文件作为上下文。
         确保 core_concepts.md 放在最开头。
         """
         context = []

@@ -215,7 +215,7 @@ Diff Snippet:
         ignore_prefixes = (
             ".github/",
             ".vscode/",
-            "docs/",
+            "skill-astrbot-dev/",
             "doc/",
             "website/",
             "web/",
@@ -337,7 +337,7 @@ Diff Snippet:
             return diff[:10000] # 降级方案：直接截断
 
     def generate_doc_update(self, commit_message: str, diff: str) -> Optional[Dict]:
-        """AI 生成逻辑：生成或更新 docs/ 下各分类目录的 Functional Chunks"""
+        """AI 生成逻辑：生成或更新 skill-astrbot-dev/ 下各分类目录的 Functional Chunks"""
         base_context = self._get_base_context()
         processed_diff = self._preprocess_diff(diff)
         today = datetime.now().strftime("%Y-%m-%d")

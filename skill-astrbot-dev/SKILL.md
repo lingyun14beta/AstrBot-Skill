@@ -1,16 +1,30 @@
 ---
 name: skill-astrbot-dev
-description: Reference + workflow notes for AstrBot plugin development (messages, platform adapters, plugin config, agent system).
+description: |
+  AstrBot plugin development reference and workflow guide.
+  
+  Use this skill when you are:
+  - Writing AstrBot plugins, hooks, decorators, or message handlers
+  - Implementing platform adapters, message chains, or event flows
+  - Configuring plugin schemas, sessions, or lifecycle management
+  - Working with Agent system (tools, subagents, personas, sandboxes, cron jobs)
+  - Converting between AstrBot message models and platform-specific formats
+  - Looking up AstrBot API signatures, hook inventories, or code entrypoints
+  - Debugging plugin issues related to message routing, event handling, or provider integration
+  
+  Provides reference docs for: messages, platform adapters, plugin config, agent system, and core concepts.
 metadata:
-  short-description: AstrBot dev reference
+  short-description: AstrBot plugin development reference
+  version: "4.x"
+  compatibility: astrbot >=4.16
+  license: MIT
 ---
 
 # skill-astrbot-dev
 
-This skill is the source-of-truth index for AstrBot developer docs in this repo (`skill-astrbot-dev/`).
+This skill provides the authoritative reference for AstrBot plugin and core development.
 
-Goal: when this skill is selected, immediately ground on the minimum required docs + code entrypoints,
-avoid duplicated reading, and always prefer code as the final authority.
+It covers message models, platform adapter interfaces, plugin configuration schemas, hooks/lifecycle, and the Agent system (tools, subagents, personas, sandboxes, cron).
 
 ## When to use
 

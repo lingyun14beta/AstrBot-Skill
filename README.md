@@ -29,7 +29,21 @@ AstrBot 的 **AGENT SKILL 仓库**，包含插件开发的结构化技术文档�
 
 ## 🚀 快速开始
 
-从release下载skill，将 Skill 文件内容提供给 AI 助手即可激活：
+### 方式一：使用 npm 安装（推荐）
+
+通过 [skills.sh CLI](https://skills.sh) 安装：
+
+```bash
+# 安装到当前项目
+npx skills add xunxiing/AstrBot-Skill
+
+# 或全局安装（所有项目可用）
+npx skills add -g xunxiing/AstrBot-Skill
+```
+
+### 方式二：下载文件
+
+从 [Release](https://github.com/xunxiing/AstrBot-Skill/releases) 下载 Skill 文件，将 `skill-astrbot-dev/SKILL.md` 内容提供给 AI 助手即可激活。
 
 ### 示例
 

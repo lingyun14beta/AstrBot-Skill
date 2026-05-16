@@ -7,7 +7,7 @@ metadata:
 
 # skill-astrbot-dev
 
-This skill is the source-of-truth index for AstrBot developer docs in this repo (`docs/`).
+This skill is the source-of-truth index for AstrBot developer docs in this repo (`skill-astrbot-dev/`).
 
 Goal: when this skill is selected, immediately ground on the minimum required docs + code entrypoints,
 avoid duplicated reading, and always prefer code as the final authority.
@@ -24,16 +24,16 @@ Use this skill when you ask for help with:
 ## Mandatory workflow (use this every time)
 
 1. Start from a single entrypoint (avoid broad loading):
-   - Site index: `docs/index.md`
-   - Core concepts: `docs/design_standards/core_concepts.md`
+   - Site index: `skill-astrbot-dev/index.md`
+   - Core concepts: `skill-astrbot-dev/design_standards/core_concepts.md`
 2. Pick one topic folder and stay focused:
-   - Agent system: `docs/agent/`
-   - Plugin config: `docs/plugin_config/`
-   - Messages: `docs/messages/`
-   - Platform adapters: `docs/platform_adapters/`
-3. For Agent Runner (v4.7.0+): `docs/agent/agent-runner.md`
+   - Agent system: `skill-astrbot-dev/agent/`
+   - Plugin config: `skill-astrbot-dev/plugin_config/`
+   - Messages: `skill-astrbot-dev/messages/`
+   - Platform adapters: `skill-astrbot-dev/platform_adapters/`
+3. For Agent Runner (v4.7.0+): `skill-astrbot-dev/agent/agent-runner.md`
 4. If the user targets a specific AstrBot version, cross-check:
-   - `docs/snapshots/<version>/`
+   - `skill-astrbot-dev/snapshots/<version>/`
 5. If docs and code disagree, treat code as truth:
    - Core code lives under `astrbotcore/astrbot/core/` (read only the needed files)
 
@@ -83,7 +83,6 @@ astrbot_version: ">=4.16,<5" #声明插件要求的 AstrBot 版本范围。
 - Keep README and metadata consistent with actual plugin behavior and version.
   -If you are writing AstrBot core code instead of plugins, you must submit a PR to https://github.com/AstrBotDevs/AstrBot-docs if the changes require doc updates (for instance: new hooks, new APIs, new features, platform adapter changes, and so on). If you don't see the docs repo, please remind the user to clone the docs-repo and add it to the workspace.
 Ensure that a `requirements.txt` file is created in the plugin directory and populated with the necessary dependencies.
-plugin i18n is recommanded ,but is still in experiment state use it carefully
 It's best to keep the plugin size under 32MB.
 For large resources like high-resolution images, it is best to use a CDN instead of hardcoring.
 ### 
@@ -92,8 +91,8 @@ For large resources like high-resolution images, it is best to use a CDN instead
 
 There are two different "hook" layers you must not mix up:
 
-- Plugin event hooks (decorators): `docs/plugin_config/hooks.md`
-- Agent runner hooks (`BaseAgentRunHooks`): `docs/agent/agent-related-hooks.md`
+- Plugin event hooks (decorators): `skill-astrbot-dev/plugin_config/hooks.md`
+- Agent runner hooks (`BaseAgentRunHooks`): `skill-astrbot-dev/agent/agent-related-hooks.md`
 
 If you need a complete hook inventory (because context may be truncated), generate it locally:
 
@@ -101,7 +100,7 @@ If you need a complete hook inventory (because context may be truncated), genera
 python scripts/generate_hook_inventory.py
 ```
 
-This writes to `docs/.tmp/hook_inventory/` (gitignored). Use it as a scratchpad for writing/updating docs;
+This writes to `skill-astrbot-dev/.tmp/hook_inventory/` (gitignored). Use it as a scratchpad for writing/updating docs;
 do not reference `.tmp` paths as public documentation URLs.
 
 ## High-signal code entrypoints (open only when needed)
@@ -116,7 +115,7 @@ do not reference `.tmp` paths as public documentation URLs.
 
 ## v4.5.7+ New Tool Definition Pattern
 
-推荐使用 dataclass 模式定义 Tool（见 `docs/design_standards/core_concepts.md` 第7节）：
+推荐使用 dataclass 模式定义 Tool（见 `skill-astrbot-dev/design_standards/core_concepts.md` 第7节）：
 
 ```python
 from pydantic.dataclasses import dataclass

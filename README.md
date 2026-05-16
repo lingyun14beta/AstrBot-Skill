@@ -33,7 +33,7 @@ AstrBot 的 **AGENT SKILL 仓库**，包含插件开发的结构化技术文档�
 
 ### 示例
 
-> 请阅读 `docs/SKILL.md`，然后帮我写一个 AstrBot 插件，实现：当收到消息时自动回复"你好！"
+> 请阅读 `skill-astrbot-dev/SKILL.md`，然后帮我写一个 AstrBot 插件，实现：当收到消息时自动回复"你好！"
 
 ---
 

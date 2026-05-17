@@ -6,19 +6,6 @@ AstrBot 基于 `astrbot.api.event.filter` 提供一套装饰器用于注册指�
 
 ## 基础注册
 
-### @register
-标记插件类，提供基础元数据。
-
-> 不推荐使用，建议通过 `metadata.yaml` 配置插件元数据（更灵活且支持更多字段）。
-
-```python
-from astrbot.api.star import register, Star
-
-@register("demo", "Author", "示例插件", "1.0.0")
-class DemoPlugin(Star):
-    pass
-```
-
 ### @filter.command
 注册指令，支持带参函数和别名。
 

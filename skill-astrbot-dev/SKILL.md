@@ -99,6 +99,7 @@ astrbot_version: ">=4.16,<5" #声明插件要求的 AstrBot 版本范围。
 Ensure that a `requirements.txt` file is created in the plugin directory and populated with the necessary dependencies.
 It's best to keep the plugin size under 32MB.
 For large resources like high-resolution images, it is best to use a CDN instead of hardcoring.
+It's better to use new hooks instead of old ones.
 ### 
 
 ## Hooks: avoid missing / outdated references

@@ -4,7 +4,6 @@
 
 ### 1. 装饰器 (Decorators)
 
-- `@register(id, author, description, version, repo_url)`: 注册插件。
 - `@filter.command(name, alias, priority)`: 注册指令。支持带参函数。
 - `@filter.command_group(name)`: 注册指令组。
 - `@filter.event_message_type(type)`: 过滤消息类型 (`ALL`, `PRIVATE_MESSAGE`, `GROUP_MESSAGE`)。

@@ -7,6 +7,37 @@ category: agent
 
 ## Plugin Hooks
 
+### Agent 生命周期阶段
+
+- `@filter.on_agent_begin()`
+- `@filter.on_agent_done()`
+
+```python
+from astrbot.api.event import filter, AstrMessageEvent
+from astrbot.api.provider import LLMResponse
+from astrbot.core.agent.run_context import ContextWrapper
+from astrbot.core.astr_agent_context import AstrAgentContext
+
+@filter.on_agent_begin()
+async def on_begin(
+    self,
+    event: AstrMessageEvent,
+    run_context: ContextWrapper[AstrAgentContext],
+) -> None:
+    """Agent 开始运行前触发。run_context.messages 是 list[Message]（Pydantic）"""
+    ...
+
+@filter.on_agent_done()
+async def on_done(
+    self,
+    event: AstrMessageEvent,
+    run_context: ContextWrapper[AstrAgentContext],
+    response: LLMResponse,
+) -> None:
+    """Agent 运行完成后触发"""
+    ...
+```
+
 ### LLM 请求阶段
 
 - `@filter.on_waiting_llm_request()`
@@ -79,9 +110,10 @@ class MyAgentHooks(BaseAgentRunHooks):
 
 ## 主 Agent 默认映射关系
 
+- `on_agent_begin` -> `@filter.on_agent_begin()`
 - `on_tool_start` -> `@filter.on_using_llm_tool()`
 - `on_tool_end` -> `@filter.on_llm_tool_respond()`
-- `on_agent_done` -> `@filter.on_llm_response()`
+- `on_agent_done` -> `@filter.on_agent_done()`
 
 ## MUST
 

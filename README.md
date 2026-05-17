@@ -63,7 +63,6 @@ docs/
 ├── plugin_config/        # 插件配置、装饰器、生命周期、Hooks
 ├── platform_adapters/    # 平台适配器接口
 ├── Storage & Utils/      # 存储与工具类
-└── snapshots/            # 版本快照（v4.11.2, v4.12.x...）
 
 data/skills/
 └── docs4agent/
@@ -76,7 +75,6 @@ data/skills/
 
 | 资源 | 链接 |
 |:----:|:----:|
-| 📖 官方文档（实时） | [AstrBot 主仓库 docs/](https://github.com/AstrBotDevs/AstrBot/tree/master/docs) |
 | 🏠 AstrBot 主仓库 | [github.com/AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) |
 | 📝 官方文档站 | [docs.astrbot.app](https://docs.astrbot.app/) |
 | 🐛 问题反馈 | [GitHub Issues](https://github.com/AstrBotDevs/AstrBot/issues) |
@@ -87,11 +85,7 @@ data/skills/
 
 [官方交流群 **1054962131**](https://qm.qq.com/q/AstrBot)
 
-### 本地测试
 
-```bash
-python scripts/test_api.py
-```
 
 ---
 
